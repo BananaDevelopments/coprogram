@@ -15,7 +15,11 @@ class UsersController extends Controller
     }
     
     public function store() {
-        $input = Input::only(['email', 'password']);
+        $input = array(
+            'email' => Input::get('email'),
+            'password' => md5(Input::get('password'))
+        );
+        
         $user = new \App\User;
         
         $user->fill($input);
