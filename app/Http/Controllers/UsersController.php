@@ -17,18 +17,18 @@ class UsersController extends Controller
     public function store() {
         $input = array(
             'email' => Input::get('email'),
-            'password' => md5(Input::get('password'))
+            'password' => bcrypt(Input::get('password'))
         );
         
         $user = new \App\User;
         
         $user->fill($input);
         $user->save();
-        /*
+        
         if(Auth::attempt($input)) {
             echo 'Logged';
         } else {
             echo 'Failed';
-        }*/
-    }
+        }
+     }
 }

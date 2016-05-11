@@ -1,0 +1,7 @@
+Coprogram 0.0.1
+
+Migrations: users table created
+Seeder: users table seeded
+Controllers: users controller created
+Models: users model created
+Views: main layout, registration views created
