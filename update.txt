@@ -1,7 +1,20 @@
+Coprogram 0.0.3
+
+Controllers: UsersController updated (edit, update, show added)
+Views: main layout updated (registration link), show, edit views created
+
+Coprogram 0.0.2
+
+Migrations: users table updated (remember_token field added)
+Seeder: users table seeder updated (md5 changed to bcrypt)
+Controllers: UsersController updated (bcrypt added), AuthController added, IndexController added
+Models: users model updated (extends Authenticatable)
+Views: main layout updated (from cookbook), login view created
+
 Coprogram 0.0.1
 
 Migrations: users table created
 Seeder: users table seeded
-Controllers: users controller created
+Controllers: UsersController created
 Models: users model created
 Views: main layout, registration views created

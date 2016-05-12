@@ -31,4 +31,30 @@ class UsersController extends Controller
             echo 'Failed';
         }
      }
+     
+    public function edit($id) {
+        $user = \App\User::find($id);
+                        
+        return view('user.edit', array('user' => $user, 'id' => $id));
+    }
+    
+    public function update($id) {
+        $input = array(
+            'email' => Input::get('email'),
+            'password' => bcrypt(Input::get('password'))
+        );
+        
+        $user = \App\User::find($id);
+        
+        $user->fill($input);
+        $user->save();
+        
+        echo 'Ok!';
+     }
+     
+     public function show($id) {
+         $user = \App\User::find($id);
+         
+         return view('user.show', array('user' => $user));
+     }
 }
