@@ -25,7 +25,10 @@ class UsersController extends Controller
         $user->fill($input);
         $user->save();
         
-        if(Auth::attempt($input)) {
+        if(Auth::attempt(array(
+                                'email' => Input::get('email'),
+                                'password' => Input::get('password')
+           ))) {
             echo 'Logged';
         } else {
             echo 'Failed';
