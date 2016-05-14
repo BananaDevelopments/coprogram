@@ -85,9 +85,6 @@
                                     <li>
                                         <a href="{{ action('AuthController@logout') }}">Logout</a>
                                     </li>
-                                    <li>
-                                        <a href="{{ action('UsersController@edit', Auth::user()->id) }}">Edit</a>
-                                    </li>
                                     @endif
                                 </ul>
                             </li>
@@ -100,6 +97,7 @@
 
         <section id="content-section">
             <div class="container-main">
+                <h4>ADMIN pannel</h4>
                 @yield('content')
             </div>
         </section>

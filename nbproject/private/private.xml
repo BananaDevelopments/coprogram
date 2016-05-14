@@ -6,12 +6,12 @@
             <file>file:/E:/xampp/htdocs/coprogram/update.txt</file>
             <file>file:/E:/xampp/htdocs/coprogram/app/Http/Controllers/UsersController.php</file>
             <file>file:/E:/xampp/htdocs/coprogram/app/Http/routes.php</file>
+            <file>file:/E:/xampp/htdocs/coprogram/resources/views/user/show.blade.php</file>
             <file>file:/E:/xampp/htdocs/coprogram/app/User.php</file>
+            <file>file:/E:/xampp/htdocs/coprogram/resources/views/user/edit.blade.php</file>
             <file>file:/E:/xampp/htdocs/coprogram/resources/views/layout.blade.php</file>
             <file>file:/E:/xampp/htdocs/coprogram/app/Http/Controllers/AuthController.php</file>
-            <file>file:/E:/xampp/htdocs/coprogram/resources/views/index/index.blade.php</file>
             <file>file:/E:/xampp/htdocs/coprogram/resources/views/user/create.blade.php</file>
-            <file>file:/E:/xampp/htdocs/coprogram/database/migrations/2016_05_07_114424_create_users_table.php</file>
             <file>file:/E:/xampp/htdocs/coprogram/app/Http/Controllers/IndexController.php</file>
         </group>
     </open-files>

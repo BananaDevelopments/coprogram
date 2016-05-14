@@ -17,9 +17,18 @@ class AuthController extends Controller
         );
         
        if(Auth::attempt($input)) {
-            echo 'Logged';
+            if(Auth::user()->is_admin) {
+                return redirect(action('AdminController@index'));
+            } else {
+                return redirect(action('IndexController@index'));
+            }
         } else {
-            echo 'Failed';
+            return \Illuminate\Support\Facades\Redirect::back()->withInput(Input::only('email'));
         }
+    }
+    
+    public function  logout() {
+        Auth::logout();
+        return redirect(action('IndexController@index'));
     }
 }

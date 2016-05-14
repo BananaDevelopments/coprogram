@@ -14,26 +14,21 @@ class UsersController extends Controller
         return view('user.create');
     }
     
-    public function store() {
-        $input = array(
-            'email' => Input::get('email'),
-            'password' => bcrypt(Input::get('password'))
-        );
-        
-        $user = new \App\User;
-        
-        $user->fill($input);
-        $user->save();
+    public function store(Requests\CreateUserRequest $request) {
+        \App\User::create([
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
         
         if(Auth::attempt(array(
-                                'email' => Input::get('email'),
-                                'password' => Input::get('password')
+            'email' => $request->email,
+            'password' => $request->password
            ))) {
-            echo 'Logged';
+           return redirect(action('IndexController@index'));
         } else {
-            echo 'Failed';
+           return \Illuminate\Support\Facades\Redirect::back()->withInput(Input::only('email'));
         }
-     }
+    }
      
     public function edit($id) {
         $user = \App\User::find($id);
@@ -41,10 +36,10 @@ class UsersController extends Controller
         return view('user.edit', array('user' => $user, 'id' => $id));
     }
     
-    public function update($id) {
+    public function update($id, Requests\UpdateUserRequest $request) {
         $input = array(
-            'email' => Input::get('email'),
-            'password' => bcrypt(Input::get('password'))
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
         );
         
         $user = \App\User::find($id);
@@ -52,7 +47,7 @@ class UsersController extends Controller
         $user->fill($input);
         $user->save();
         
-        echo 'Ok!';
+        return view('user.show', array('user' => $user));
      }
      
      public function show($id) {

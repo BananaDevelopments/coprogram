@@ -16,3 +16,7 @@ Route::get('/', 'IndexController@index');
 Route::resource('users', 'UsersController');
 
 Route::post('login', 'AuthController@login');
+Route::get('logout', 'AuthController@logout');
+
+Route::get('admin', 'AdminController@index');
+Route::resource('admin/users', 'AdminUsersController');

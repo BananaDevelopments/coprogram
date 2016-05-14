@@ -2,25 +2,32 @@
 
 @section('content')
 <div>
-    {!! Form::open(['route' => ['users.update', $id], 'method' => 'PATCH']) !!}
+    {!! Form::open(['route' => 'admin.users.store', 'method' => 'POST']) !!}
         <label>
             Email
         </label>
-        {!! Form::text('email', $user->email, ['class' => 'form-control']) !!}
+        {!! Form::text('email', null, ['class' => 'form-control']) !!}
+        <!--<input class="form-control" type="text" name="email" value="">-->
 
         <label>
             Password
         </label>
-        
+
         <input type="password" class="form-control" name="password">
         
         <label>
             Confirm Password
         </label>
-        
+
         <input type="password" class="form-control" name="password_confirmation">
 
-        <input type="submit" name="submit" class="btn btn-warning btn-sm" value="Update">
+        <label>
+            IS_ADMIN
+        </label>
+        
+        {!! Form::select('is_admin', ['no', 'yes'], false) !!}
+        
+        <input type="submit" name="submit" class="btn btn-warning btn-sm" value="Create">
     {!! Form::close() !!}
     
     @if($errors->any())

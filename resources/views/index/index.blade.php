@@ -12,7 +12,7 @@
             Email
         </label>
 
-        <input class="form-control" type="text" name="email">
+        {!! Form::text('email', null, ['class' => 'form-control']) !!}
 
         <label>
             Password
